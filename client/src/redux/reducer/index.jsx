@@ -1,5 +1,22 @@
-import React from "react";
+const initialState = {
+  beers: [],
+  allBeers: [],
+  detail: {},
+  userType: []
+};
 
-export default function index() {
-  return <div>index</div>;
+function Reducer(state = initialState, action) {
+  switch (action.type) {
+
+
+    case 'GET_BEERS':
+      return {
+        ...state,
+        allBeers: action.payload,
+      };
+
+    default:
+      return { ...state };
+  }
 }
+export default Reducer;
