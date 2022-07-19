@@ -3,6 +3,7 @@ import "./App.css";
 import LandingPage from "./components/LandingPage/LandingPage";
 import Home from "./components/Home/Home";
 import BeerDetail from "./components/BeerDetail/BeerDetail";
+import Login from "./components/login/login";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
           <Route exact path="/" component={LandingPage} />
           <Route exact path="/home" component={Home} />
           <Route path="/beers/detail/:id" component={BeerDetail} />
+          <Route path="/login" component={Login} />
         </Switch>
       </div>
     </Router>

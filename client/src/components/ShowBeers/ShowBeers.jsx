@@ -2,7 +2,6 @@ import { React, useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getAllBeers } from '../../redux/actions';
 import style from '../ShowBeers/ShowBeers.module.css'
-import Loading from "../Loading/Loading";
 
 import BeerCard from "../BeerCard/BeerCard";
 import Pagination from "../Pagination/Pagination";
@@ -27,7 +26,7 @@ export default function ShowBeers() {
     <div className={style.showBeers}>
       <div className={style.cardsContainer}>
         <div className={style.cardsBox}>
-                    {allBeers.length === 0 ? <span>(<Loading setLoading={setLoading}/>)</span> : currentBeer?.map(beer => {
+                    {allBeers.length === 0 ? 'hola' : currentBeer?.map(beer => {
                         return (
                             <BeerCard
                                 key={beer.id}
