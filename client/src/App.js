@@ -3,8 +3,9 @@ import "./App.css";
 import LandingPage from "./components/LandingPage/LandingPage";
 import Home from "./components/Home/Home";
 import BeerDetail from "./components/BeerDetail/BeerDetail";
-import Login from "./components/login/login";
-import Signup from "./components/Signup";
+import Login from "./components/Authentication/components/login";
+import Signup from "./components/Authentication/components/Signup";
+import { AuthProvider } from "./components/Authentication/AuthContext";
 function App() {
   return (
     <Router>
@@ -14,7 +15,10 @@ function App() {
           <Route exact path="/home" component={Home} />
           <Route path="/beers/detail/:id" component={BeerDetail} />
           <Route path="/login" component={Login} />
-          <Route path="/test" component={Signup} />
+
+          <AuthProvider>
+            <Route path="/test" component={Signup} />
+          </AuthProvider>
         </Switch>
       </div>
     </Router>
