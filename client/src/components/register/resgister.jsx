@@ -15,7 +15,10 @@ export default function Register() {
     const [user, SetUser] = useState({
         email: '',
         password: '',
-        confirmation:''
+        confirmation:'',
+        name:'',
+        surname:'',
+        address:''
     })
 
     const handleChange = (e) => {
@@ -31,7 +34,8 @@ export default function Register() {
            
                 if (user.password === user.confirmation){
             await signup(user.email, user.password)
-            history.push('/home')
+            console.log(user)
+            //history.push('/home')
             }else{
                 swal('Passwords do not match')
             }
@@ -48,6 +52,31 @@ export default function Register() {
     <div className={style.container}>
         <form>
         <h1>Sign In</h1>
+        <div className={style.password}>
+            <label>Name: </label>
+            <input name='name' 
+            type="name" 
+            placeholder='youremail@company.com' 
+            onChange={handleChange} />
+     </div>
+
+     <div className={style.password}>
+            <label>Surname: </label>
+            <input name='surname' 
+            type="surname" 
+            placeholder='youremail@company.com' 
+            onChange={handleChange} />
+     </div>
+
+
+     <div className={style.password}>
+            <label>Address: </label>
+            <input name='address' 
+            type="address" 
+            placeholder='youremail@company.com' 
+            onChange={handleChange} />
+     </div>
+        
         <div className={style.password}>
             <label>Email: </label>
             <input name='email' 
