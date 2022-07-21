@@ -11,7 +11,7 @@ async function getAllUsers(req, res, next) {
 }
 
 async function postUser(req, res, next) {
-    const { id, name, surname, address } = req.body;
+    const { id, name, surname, address, email } = req.body;
     try {
         let newUser = await User.create(
             {
@@ -19,9 +19,10 @@ async function postUser(req, res, next) {
                 name,
                 surname,
                 address,
+                email
             },
             {
-                fields: ["id", "name", "surname", "address"],
+                fields: ["id", "name", "surname", "address","email"],
             }
         );
         return res.json(newUser);

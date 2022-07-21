@@ -4,16 +4,20 @@ import { useHistory } from "react-router-dom";
 import style from '../Login/Login.module.css'
 import swal from 'sweetalert'
 import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { postUser  } from "../../redux/actions";
 
 
 export default function Register() {
+
+    const dispatch = useDispatch()
 
     const {signup} = useAuth()
     const history = useHistory()
     const [error,setError] = useState('')
 
     const [user, SetUser] = useState({
-        email: '',
+        email:'',
         password: '',
         confirmation:'',
         name:'',
@@ -25,16 +29,19 @@ export default function Register() {
         SetUser({
             ...user,
             [e.target.name]: e.target.value
+            
         })
+        console.log(e.target.value)
     }
 
     const handleSubmit = async (e) => {
         e.preventDefault()
         try {
            
-                if (user.password === user.confirmation){
+            if (user.password === user.confirmation){
             await signup(user.email, user.password)
-            console.log(user)
+            dispatch(postUser(user))
+            console.log(user, 'holaaa')
             //history.push('/home')
             }else{
                 swal('Passwords do not match')
@@ -79,7 +86,8 @@ export default function Register() {
         
         <div className={style.password}>
             <label>Email: </label>
-            <input name='email' 
+            <input 
+            name='email' 
             type="email" 
             placeholder='youremail@company.com' 
             onChange={handleChange} />
