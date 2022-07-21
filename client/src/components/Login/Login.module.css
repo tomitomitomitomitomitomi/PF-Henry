@@ -1,5 +1,8 @@
 .container{
     margin: 100px;
+    border-color:solid;
+    border: 10px;
+    border: salmon;
 }
 .password{
 margin: 20px;

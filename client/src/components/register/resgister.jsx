@@ -71,10 +71,10 @@ export default function Register() {
             onChange={handleChange} />
     </div>
 
-            <button onClick={handleSubmit} >Register</button>
+            <button className={style.password} onClick={handleSubmit} >Register</button>
         </form>
         <Link to='/home'>
-                <button>Volver</button>
+                <button>Return</button>
             </Link>
 
     </div>

@@ -91,12 +91,14 @@ export default function Login() {
             </a>
                 
             </form>
-
-            <label>Don't have an Account</label>
+<div className={style.password}>
+            <label>Don't have an Account              </label>
             <Link to='/register'>
                 <button>Register</button>
             </Link>
-            <div>
+</div>
+
+            <div className={style.password}>
                 <button onClick={handleGoogle}>Google Login</button>
             </div>
             <Link to='/home'>
