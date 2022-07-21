@@ -8,6 +8,7 @@ import {
 
 
 const initialState = {
+  Search:[],
   beers: [],
   allBeers: [],
   detail: {},
@@ -50,6 +51,7 @@ function Reducer(state = initialState, action) {
     case SEARCH_BAR: {
       return {
         ...state,
+        Search:action.payload,
         allBeers: action.payload
       }
     }
