@@ -28,8 +28,9 @@ export default function Login() {
         e.preventDefault()
         console.log(user)
         try {
-            await login(user.email, user.password)
-            history.push('/home')  
+                await login(user.email, user.password)
+                history.push('/home')  
+                     
         } catch (error) {
             console.log(error.message)
             setError(error.message)

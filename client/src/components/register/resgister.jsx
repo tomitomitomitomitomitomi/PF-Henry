@@ -5,6 +5,7 @@ import style from '../Login/Login.module.css'
 import swal from 'sweetalert'
 import { Link } from "react-router-dom";
 
+
 export default function Register() {
 
     const {signup} = useAuth()
