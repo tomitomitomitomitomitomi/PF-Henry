@@ -104,7 +104,7 @@ async function deleteBeer(req, res, next) {
 async function postBeer(req, res, next) {
     const { name, description, regularPrice, currentPrice, image, idseller } = req.body;
     try {
-        let newBeer = await Seller.create(
+        let newBeer = await Beer.create(
             {
                 name,
                 description,
