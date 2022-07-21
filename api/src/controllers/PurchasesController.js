@@ -14,12 +14,12 @@ async function postPurchases(req, res, next) {
                 fields: ["id", "userId"],
             }
         );
-
         return res.json(newPurchases);
     } catch (error) {
         next(error)
     }
 }
+
 async function getAllPurchases(req, res, next) {
     try {
         const UsersDb = await User.findAll()
@@ -28,7 +28,7 @@ async function getAllPurchases(req, res, next) {
         next(error)
     }
 }
+
 module.exports = {
     postPurchases,
-
 }

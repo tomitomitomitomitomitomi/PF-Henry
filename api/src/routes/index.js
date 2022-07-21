@@ -8,7 +8,6 @@ const { createdAllBeers } = require('../controllers/BeerController.js');
 
 const router = Router();
 
-
 // Configurar los routers
 // Ejemplo: router.use('/auth', authRouter);
 router.use('/user', user)

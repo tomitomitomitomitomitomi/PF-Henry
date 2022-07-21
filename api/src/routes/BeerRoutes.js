@@ -9,5 +9,4 @@ router.post('/', postBeer)
 router.put('/update/:id', updateBeer)
 router.delete('/', deleteBeer)
 
-
 module.exports = router;
