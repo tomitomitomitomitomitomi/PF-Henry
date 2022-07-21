@@ -4,29 +4,32 @@ const Seller = require("./Seller");
 // Luego le injectamos la conexion a sequelize.
 module.exports = (sequelize) => {
   // defino el modelo
-  sequelize.define("beer", {
-    id: {
-      type: DataTypes.INTEGER,
-      autoIncrement: true,
-      primaryKey: true
+  sequelize.define(
+    "beer",
+    {
+      id: {
+        type: DataTypes.INTEGER,
+        autoIncrement: true,
+        primaryKey: true,
+      },
+      name: {
+        type: DataTypes.STRING,
+      },
+      description: {
+        type: DataTypes.STRING,
+      },
+      price: {
+        type: DataTypes.INTEGER,
+      },
+      stock: {
+        type: DataTypes.INTEGER,
+      },
+      image: {
+        type: DataTypes.STRING,
+      },
     },
-    name: {
-      type: DataTypes.STRING,
-    },
-    description: {
-      type: DataTypes.STRING,
-    },
-    regularPrice: {
-      type: DataTypes.STRING,
-    },
-    currentPrice: {
-      type: DataTypes.STRING,
-    },
-    image: {
-      type: DataTypes.STRING,
-    }
-  },
 
-    { timestamps: false });
+    { timestamps: false }
+  );
 };
 //AÑADIR COSAS TIPO GRADUACIÓN, Y PARAMETROS PARA FANÁTICOS DE LA BIRRA
