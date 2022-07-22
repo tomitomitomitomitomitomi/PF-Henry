@@ -23,14 +23,18 @@ export default function NavBar({setPage }) {
         </span>
       </Link>
       <SearchBar setPage={setPage}/>
-      <button onClick={handleLogOut}>LogOut</button>
-      <Link to='/login'>
+      { user ? '':
+        <Link to='/login'>
         <button>Login</button>
       </Link>
-      <Link to="/add">
+      }
+
+    <Link to='/login'>
         <button>Add</button>
       </Link>
+      
       <h1>Hello {user ? user.email : ''}</h1>
+      <button onClick={handleLogOut}>LogOut</button>
     </nav>
   )
 }

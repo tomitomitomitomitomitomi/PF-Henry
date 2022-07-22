@@ -16,17 +16,15 @@ module.exports = (sequelize) => {
     description: {
       type: DataTypes.STRING,
     },
-    regularPrice: {
+    price: {
       type: DataTypes.STRING,
     },
-    currentPrice: {
-      type: DataTypes.STRING,
+    stock: {
+      type: DataTypes.INTEGER,
     },
     image: {
       type: DataTypes.STRING,
     }
-  },
-
-    { timestamps: false });
+  }, { paranoid: true });
 };
 //AÑADIR COSAS TIPO GRADUACIÓN, Y PARAMETROS PARA FANÁTICOS DE LA BIRRA
